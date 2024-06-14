@@ -20,7 +20,7 @@ export function CharacterCard({ character, isFavorite }: CharacterProps) {
   }
 
   return (
-    <div className="flex items-center gap-4 py-4 border-b-2">
+    <div className="flex items-center gap-4 py-4 border-b-2 pr-2">
       <Link
         to={`character/${character.id}`}
         className="rounded-full h-14 w-14 overflow-hidden"
