@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+# Ricky and Morty Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## General
 
-Currently, two official plugins are available:
+This project is a web responsive application that allows displaying data from the Rick and Morty API. It is focused on the characters and contains filters such as Characters, Species, Gender and status. Additionally, it allows searching in the search bar by pressing enter or using the search icon.
+You can add a favorite from the sidebar or from the Character detail view. Furthermore, you can add a comment or delete a comment in the Character detail view.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### API
 
-## Expanding the ESLint configuration
+[Rick and Morty API](https://rickandmortyapi.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Techonologies
 
-- Configure the top-level `parserOptions` property like this:
+- Vite with React v18.2.0
+- React Router Dom v6.23.1
+- Tailwind CSS
+- GraphQL and ApolloClient
+- Zustand
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Setup
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To run this project you need node Js v20 or above and npm
+
+### Run
+
+These are te steps to run this project Locally:
+
+- Clone this repository
+
+`git clone https://github.com/Jessaleem/ricky-and-morty.git`
+
+- run `npm install`
+
+- run `npm run dev`
+
+- Check your console and enter the url in your browser

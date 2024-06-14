@@ -36,10 +36,24 @@ export function CharacterPage() {
   const [message, setMessage] = useState("");
   const { id } = useParams();
   const navigate = useNavigate();
-  const { favorites, addComentary, commentaries, removeCommentary } =
-    useCharacter();
+  const {
+    favorites,
+    addComentary,
+    commentaries,
+    removeCommentary,
+    addFav,
+    deleteFav,
+  } = useCharacter();
 
   const isFavorite = favorites.some((character) => +character.id === +id!);
+
+  function handleClick() {
+    if (isFavorite) {
+      deleteFav(character.id);
+    } else {
+      addFav(character);
+    }
+  }
 
   const { loading, data } = useQuery(characterDetailQuery, {
     variables: { id },
@@ -69,15 +83,17 @@ export function CharacterPage() {
       <div className="rounded-full h-20 w-20 mt-5 mb-4 relative z-0">
         <img src={character.image} className="rounded-full" />
         <div className="absolute right-0 bottom-0 z-10 rounded-full pt-[0.2rem] bg-white">
-          {isFavorite ? (
-            <IconHeartFilled
-              color="#63D838"
-              width={"1.8rem"}
-              height={"1.536rem"}
-            />
-          ) : (
-            <IconHeart />
-          )}
+          <button onClick={handleClick}>
+            {isFavorite ? (
+              <IconHeartFilled
+                color="#63D838"
+                width={"1.8rem"}
+                height={"1.536rem"}
+              />
+            ) : (
+              <IconHeart />
+            )}
+          </button>
         </div>
       </div>
       <p className="font-bold text-2xl">{character.name}</p>
@@ -86,7 +102,7 @@ export function CharacterPage() {
         <Divider />
         <CharacterDetail title="Status" value={character.status} />
         <Divider />
-        <CharacterDetail title="Occupation" value={character.species} />
+        <CharacterDetail title="Location" value={character.location.name} />
       </div>
       <form onSubmit={onSubmit} className="mt-12 max-w-4xl">
         <label htmlFor="comment">Add Commentary</label>
