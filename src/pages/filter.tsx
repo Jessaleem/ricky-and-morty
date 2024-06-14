@@ -87,7 +87,7 @@ export function Filter() {
       </section>
       <section
         className={`${
-          isMenuOpen ? "-translate-y-full top-[715px]" : ""
+          isMenuOpen ? "-translate-y-full top-[720px]" : ""
         } px-6 py-8 absolute top-0 w-full rounded-xl shadow-2xl transform transition-all duration-300 bg-white z-10 hidden md:block`}
       >
         <FilterDetail title="Sort by">
