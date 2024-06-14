@@ -11,6 +11,7 @@ export interface Character {
     episode:  string[];
     url:      string;
     created:  Date;
+    commentaries: Commentary[];
 }
 
 export enum Gender {
@@ -49,5 +50,11 @@ export interface CharacterFav {
     url:      string;
     created:  Date;
     isFavorite: boolean;
+    commentaries: Commentary[];
+}
 
+export interface Commentary {
+    id: string,
+    characterId: number;
+    message: string;
 }

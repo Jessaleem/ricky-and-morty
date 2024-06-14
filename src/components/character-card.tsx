@@ -1,10 +1,10 @@
 import { IconHeart, IconHeartFilled } from "@tabler/icons-react";
-import { Character } from "../interfaces/character";
+import { CharacterFav } from "../interfaces/character";
 import { Link } from "react-router-dom";
 import { useCharacter } from "../hooks/useCharacter";
 
 interface CharacterProps {
-  character: Character;
+  character: CharacterFav;
   isFavorite: boolean;
 }
 
@@ -33,7 +33,7 @@ export function CharacterCard({ character, isFavorite }: CharacterProps) {
       </Link>
 
       <button onClick={handleClick}>
-        {isFavorite ? <IconHeartFilled /> : <IconHeart />}
+        {isFavorite ? <IconHeartFilled color="#63D838" /> : <IconHeart />}
       </button>
     </div>
   );
